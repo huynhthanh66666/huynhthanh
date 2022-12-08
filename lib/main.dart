@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'ui/products/products_overview_screen.dart';
 import 'ui/products/products_manager.dart';
+import 'ui/products/user_products_screen.dart';
 import 'ui/products/product_detail_screen.dart';
 
 void main() {
@@ -14,32 +15,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'My Shop',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: 'Lato',
-          colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.purple,
-          ).copyWith(
-            secondary: Colors.deepOrange,
-          ),
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          // primarySwatch: Colors.blue,
+      title: 'My Shop',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Lato',
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
+        ).copyWith(
+          secondary: Colors.deepOrange,
         ),
-        home: SafeArea(
-          child: ProductDatailScreen(
-            ProductsManager().items[0],
-          ),
-          //color: Colors.green,
-        ));
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        // primarySwatch: Colors.blue,
+      ),
+      home: const SafeArea(
+        child: UserProductsScreen(),
+      ),
+      //color: Colors.green,
+    );
   }
 }
 
